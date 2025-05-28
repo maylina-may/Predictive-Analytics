@@ -126,17 +126,11 @@ Sebaliknya, tidak ditemukan korelasi negatif yang signifikan antar fitur numerik
 
 ## 💹 Modeling
 
-1. 🤖 K-Nearest Neighbors Regressor (KNN)
+1. 🤖 K-Nearest Neighbors Regressor (KNN). Model pertama adalah **KNeighborsRegressor** dengan jumlah tetangga (neighbors) sebesar 5. Model ini dilatih menggunakan data pelatihan (x_train dan y_train).
 
-Model pertama adalah **KNeighborsRegressor** dengan jumlah tetangga (neighbors) sebesar 5. Model ini dilatih menggunakan data pelatihan (x_train dan y_train).
+3. 🌲 Random Forest Regressor. MOdel kedua adalah **RandomForestRegressor** dengan 100 estimator dan pengaturan random_state sebesar 42 untuk memastikan hasil yang konsisten. Model ini dilatih menggunakan data pelatihan (X_train dan y_train).
 
-3. 🌲 Random Forest Regressor
-
-MOdel kedua adalah **RandomForestRegressor** dengan 100 estimator dan pengaturan random_state sebesar 42 untuk memastikan hasil yang konsisten. Model ini dilatih menggunakan data pelatihan (X_train dan y_train).
-
-5. ⚡ AdaBoost Regressor
-
-Model ketiga adalah **AdaBoostRegressor** dengan learning rate sebesar 0.05 dan random_state yang sama.
+5. ⚡ AdaBoost Regressor. Model ketiga adalah **AdaBoostRegressor** dengan learning rate sebesar 0.05 dan random_state yang sama.
 
 ---
 
