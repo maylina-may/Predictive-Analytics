@@ -35,9 +35,9 @@ Proyek ini memanfaatkan dataset Students Performance in Exams dari Kaggle untuk 
   - Tidak ada missing value ✅
   - Tidak terdapat data duplikat ✅
   - Terdeteksi outlier pada kolom **reading score** dan  
-    **writing score** 🧐
+    **writing score** 🔎
 
-### 🔍 Variabel pada 1000 Students Performance in Exams adalah sebagai berikut:
+### 📌 Variabel pada 1000 Students Performance in Exams adalah sebagai berikut:
 
 - **gender:** Jenis kelamin siswa (categorical).
 - **race/ethnicity:** Kelompok ras atau etnis siswa (categorical).
