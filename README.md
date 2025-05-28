@@ -55,23 +55,24 @@ Proyek ini memanfaatkan dataset Students Performance in Exams dari Kaggle untuk 
 Pada tahap ini Univariate Analysis, dilakukan analisis distribusi fitur kategorikal (gender, race/ethnicity, parental level of education, lunch, test preparation course) dengan hitung jumlah dan presentase kategori, dan juga divisualisasikan dengan diagram batang. Untuk fitur numerik (math score, reading score, dan writing score) distribusi data divisualisasikan dengan histrogram.
 
 - **Fitur Kategorikal**:
-  - ![univariate categorical gender](https://github.com/user-attachments/assets/bd115918-10cb-4220-b3a3-85e81f5b99d2)
+
+![univariate categorical gender](https://github.com/user-attachments/assets/bd115918-10cb-4220-b3a3-85e81f5b99d2)
     
 Berdasarkan analisis, distribusi fitur gender menunjukkan female (51,8%) dan male (48,2%), dengan female menjadi kategori yang lebih dominan dibandingkan dengan male.
 
-  - ![univariate categorical race(ethnicity)](https://github.com/user-attachments/assets/40d45898-d65f-4de3-bb5a-d48982fccd8d)
+![univariate categorical race(ethnicity)](https://github.com/user-attachments/assets/40d45898-d65f-4de3-bb5a-d48982fccd8d)
     
 Fitur race/ethnicity menunjukkan bahwa grup yang paling banyak adalah grup C, diikuti oleh grup D, grup B, grub E, hingga paling sedikit adalah grup A.
 
-  - ![univariate categorical parental level of education](https://github.com/user-attachments/assets/d828e1d7-eb68-4d9b-95b3-f121a981c85b)
+![univariate categorical parental level of education](https://github.com/user-attachments/assets/d828e1d7-eb68-4d9b-95b3-f121a981c85b)
     
 Fitur parental level of education menunjukkan bahwa tingkat pendidikan orang tua yang paling umum adalah some college, diikuti oleh associate's degree, dan seterusnya.
 
-  - ![univariate categorical lunch](https://github.com/user-attachments/assets/169a3474-de9f-47df-8a9c-fae01fcdc52e)
+![univariate categorical lunch](https://github.com/user-attachments/assets/169a3474-de9f-47df-8a9c-fae01fcdc52e)
 
 Fitur lunch menunjukkan bahwa kategori standard memiliki jumlah sampel/persentase yang lebih tinggi dibandingkan dengan free/reduced, yang berarti mayoritas siswa memiliki tipe makan siang kategori standard.
     
-- ![univariate categorical test preparation course](https://github.com/user-attachments/assets/cdd1324f-6f0e-4e65-9b21-612731932f5d)
+![univariate categorical test preparation course](https://github.com/user-attachments/assets/cdd1324f-6f0e-4e65-9b21-612731932f5d)
 
 Fitur test preparation course menunjukkan bahwa kategori none memiliki jumlah sampel/persentase paling tinggi dibandingkan dengan completed. Ini berarti mayoritas siswa tidak mengikuti kursus persiapan ujian.
 
@@ -79,9 +80,9 @@ Fitur test preparation course menunjukkan bahwa kategori none memiliki jumlah sa
 
 ![univariate numerik](https://github.com/user-attachments/assets/383f3d51-032d-4a81-8536-dc17cd886aac)
 
-    - Math score: Distribusi cenderung normal, puncaknya di sekitar nilai tengah. Ada beberapa siswa dengan skor rendah.
-    - Reading score: Distribusi juga cenderung normal, dengan puncak di sekitar nilai tengah. Terlihat lebih sedikit siswa dengan skor sangat rendah dibandingkan math score.
-    - Writing score: Distribusi mirip dengan reading score, cenderung normal dengan puncak di sekitar nilai tengah.
+- Math score: Distribusi cenderung normal, puncaknya di sekitar nilai tengah. Ada beberapa siswa dengan skor rendah.
+- Reading score: Distribusi juga cenderung normal, dengan puncak di sekitar nilai tengah. Terlihat lebih sedikit siswa dengan skor sangat rendah dibandingkan math score.
+- Writing score: Distribusi mirip dengan reading score, cenderung normal dengan puncak di sekitar nilai tengah.
 
 #### 2. EDA - Multivariate Analysis:
 
@@ -97,11 +98,11 @@ Selain itu, digunakan juga heatmap korelasi untuk menunjukkan tingkat hubungan (
 
 ![multivariate categorical](https://github.com/user-attachments/assets/303a0475-eb8d-4eda-90ee-c724a393e189)
 
-  - Pada fitur gender, terlihat bahwa siswa perempuan (female) cenderung memiliki rata-rata (math score) yang sedikit lebih rendah dibandingkan siswa laki-laki (male).
-  - Pada fitur race/ethnicity, rata-rata (math score) bervariasi antar grup. Grup (E) cenderung memiliki rata-rata (math score) tertinggi, sementara Grup (A) memiliki rata-rata (math score) terendah.
-  - Untuk parental level of education, siswa yang orang tuanya memiliki tingkat pendidikan lebih tinggi ("master's degree" dan "bachelor's degree") cenderung memiliki rata-rata 'math score' yang lebih tinggi dibandingkan siswa yang orang tuanya memiliki tingkat pendidikan lebih rendah ("high school" dan "some high school").
-  - Pada fitur lunch, siswa yang memiliki tipe makan siang 'standard' cenderung memiliki rata-rata 'math score' yang lebih tinggi dibandingkan siswa yang memiliki tipe makan siang 'free/reduced'.
-  - Fitur test preparation course menunjukkan bahwa siswa yang telah menyelesaikan kursus persiapan ujian ('completed') cenderung memiliki rata-rata 'math score' yang lebih tinggi dibandingkan siswa yang tidak mengikuti kursus ('none').
+- Pada fitur gender, terlihat bahwa siswa perempuan (female) cenderung memiliki rata-rata (math score) yang sedikit lebih rendah dibandingkan siswa laki-laki (male).
+- Pada fitur race/ethnicity, rata-rata (math score) bervariasi antar grup. Grup (E) cenderung memiliki rata-rata (math score) tertinggi, sementara Grup (A) memiliki rata-rata (math score) terendah.
+- Untuk parental level of education, siswa yang orang tuanya memiliki tingkat pendidikan lebih tinggi ("master's degree" dan "bachelor's degree") cenderung memiliki rata-rata 'math score' yang lebih tinggi dibandingkan siswa yang orang tuanya memiliki tingkat pendidikan lebih rendah ("high school" dan "some high school").
+- Pada fitur lunch, siswa yang memiliki tipe makan siang 'standard' cenderung memiliki rata-rata 'math score' yang lebih tinggi dibandingkan siswa yang memiliki tipe makan siang 'free/reduced'.
+- Fitur test preparation course menunjukkan bahwa siswa yang telah menyelesaikan kursus persiapan ujian ('completed') cenderung memiliki rata-rata 'math score' yang lebih tinggi dibandingkan siswa yang tidak mengikuti kursus ('none').
 
 - **Numerical Features:**
 
