@@ -34,8 +34,7 @@ Proyek ini memanfaatkan dataset Students Performance in Exams dari Kaggle untuk 
 - **Kondisi data**:
   - Tidak ada missing value ✅
   - Tidak terdapat data duplikat ✅
-  - Terdeteksi outlier pada kolom **reading score** dan  
-    **writing score** 🔎
+  - Berdasarkan visualisasi boxplot, terindikasi adanya beberapa nilai ekstrem pada kolom **reading score** dan **writing score**. Namun, perhitungan berdasarkan metode IQR tidak mendeteksi adanya outlier pada kolom-kolom tersebut.
 
 ### 📌 Variabel pada 1000 Students Performance in Exams adalah sebagai berikut:
 
@@ -118,7 +117,7 @@ Sebaliknya, tidak ditemukan korelasi negatif yang signifikan antar fitur numerik
 
 - Data diperiksa untuk menghindari adanya duplikat, meskipun dataset asli tidak mengandung duplikasi.
 - Outlier ditangani menggunakan metode **IQR (Interquartile Range)**.
-- Fitur kategorikal **State** diubah menjadi variabel numerik melalui **one-hot encoding**.
+- Fitur kategorikal `gender`, `race/ethnicity`, `parental level of education`, `lunch`, `test preparation course` diubah menjadi variabel numerik melalui **one-hot encoding**.
 - Data dibagi menjadi data latih (train) dan data uji (test) menggunakan **train_test_split** dengan proporsi 80% untuk data latih dan 20% untuk data uji.
 - Fitur numerik dinormalisasi dengan **StandardScaler**.
 
@@ -126,11 +125,18 @@ Sebaliknya, tidak ditemukan korelasi negatif yang signifikan antar fitur numerik
 
 ## 💹 Modeling
 
-1. 🤖 K-Nearest Neighbors Regressor (KNN). Model pertama adalah **KNeighborsRegressor** dengan jumlah tetangga (neighbors) sebesar 5. Model ini dilatih menggunakan data pelatihan (x_train dan y_train).
+1. 🤖 **K-Nearest Neighbor Regressor**
 
-3. 🌲 Random Forest Regressor. MOdel kedua adalah **RandomForestRegressor** dengan 100 estimator dan pengaturan random_state sebesar 42 untuk memastikan hasil yang konsisten. Model ini dilatih menggunakan data pelatihan (X_train dan y_train).
+Model K-Nearest Neighbors (KNN) untuk regresi memprediksi nilai target untuk sebuah data baru berdasarkan nilai target dari 'K' data terdekat di set pelatihan. Algoritma ini menghitung jarak antara data baru dan semua data pelatihan, kemudian memilih K data dengan jarak terpendek. Prediksi akhir untuk data baru adalah rata-rata dari nilai target K tetangga terdekat tersebut.
 
-5. ⚡ AdaBoost Regressor. Model ketiga adalah **AdaBoostRegressor** dengan learning rate sebesar 0.05 dan random_state yang sama.
+2. 🌲 **Random Forest Regressor**
+
+Random Forest Regressor adalah model ensemble yang membangun banyak Decision Tree secara independen pada subset data pelatihan dan subset fitur yang diambil secara acak. Setiap Decision Tree memprediksi nilai target secara terpisah. Hasil prediksi akhir dari Random Forest adalah rata-rata dari prediksi semua Decision Tree individual. Metode ini membantu mengurangi overfitting dan meningkatkan generalisasi.
+
+
+3. ⚡ **AdaBoost Regressor**
+
+AdaBoost Regressor (Adaptive Boosting) adalah algoritma ensemble boosting. Algoritma ini membangun model (disebut weak learner, biasanya Decision Tree sederhana) secara berurutan. Setiap model baru dilatih untuk memperbaiki kesalahan prediksi dari model sebelumnya dengan memberikan bobot lebih besar pada data yang sulit diprediksi. Prediksi akhir adalah kombinasi berbobot dari prediksi semua weak learner, di mana model yang lebih akurat memiliki bobot yang lebih tinggi.
 
 ---
 
