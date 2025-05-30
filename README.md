@@ -125,18 +125,12 @@ Sebaliknya, tidak ditemukan korelasi negatif yang signifikan antar fitur numerik
 
 ## 💹 Modeling
 
-1. 🤖 **K-Nearest Neighbor Regressor**
+1. 🤖 **K-Nearest Neighbor Regressor:** Model K-Nearest Neighbors (KNN) untuk regresi memprediksi nilai target untuk sebuah data baru berdasarkan nilai target dari 'K' data terdekat di set pelatihan. Algoritma ini menghitung jarak antara data baru dan semua data pelatihan, kemudian memilih K data dengan jarak terpendek. Prediksi akhir untuk data baru adalah rata-rata dari nilai target K tetangga terdekat tersebut.
 
-Model K-Nearest Neighbors (KNN) untuk regresi memprediksi nilai target untuk sebuah data baru berdasarkan nilai target dari 'K' data terdekat di set pelatihan. Algoritma ini menghitung jarak antara data baru dan semua data pelatihan, kemudian memilih K data dengan jarak terpendek. Prediksi akhir untuk data baru adalah rata-rata dari nilai target K tetangga terdekat tersebut.
-
-2. 🌲 **Random Forest Regressor**
-
-Random Forest Regressor adalah model ensemble yang membangun banyak Decision Tree secara independen pada subset data pelatihan dan subset fitur yang diambil secara acak. Setiap Decision Tree memprediksi nilai target secara terpisah. Hasil prediksi akhir dari Random Forest adalah rata-rata dari prediksi semua Decision Tree individual. Metode ini membantu mengurangi overfitting dan meningkatkan generalisasi.
+2. 🌲 **Random Forest Regressor:** Random Forest Regressor adalah model ensemble yang membangun banyak Decision Tree secara independen pada subset data pelatihan dan subset fitur yang diambil secara acak. Setiap Decision Tree memprediksi nilai target secara terpisah. Hasil prediksi akhir dari Random Forest adalah rata-rata dari prediksi semua Decision Tree individual. Metode ini membantu mengurangi overfitting dan meningkatkan generalisasi.
 
 
-3. ⚡ **AdaBoost Regressor**
-
-AdaBoost Regressor (Adaptive Boosting) adalah algoritma ensemble boosting. Algoritma ini membangun model (disebut weak learner, biasanya Decision Tree sederhana) secara berurutan. Setiap model baru dilatih untuk memperbaiki kesalahan prediksi dari model sebelumnya dengan memberikan bobot lebih besar pada data yang sulit diprediksi. Prediksi akhir adalah kombinasi berbobot dari prediksi semua weak learner, di mana model yang lebih akurat memiliki bobot yang lebih tinggi.
+3. ⚡ **AdaBoost Regressor :** AdaBoost Regressor (Adaptive Boosting) adalah algoritma ensemble boosting. Algoritma ini membangun model (disebut weak learner, biasanya Decision Tree sederhana) secara berurutan. Setiap model baru dilatih untuk memperbaiki kesalahan prediksi dari model sebelumnya dengan memberikan bobot lebih besar pada data yang sulit diprediksi. Prediksi akhir adalah kombinasi berbobot dari prediksi semua weak learner, di mana model yang lebih akurat memiliki bobot yang lebih tinggi.
 
 ---
 
