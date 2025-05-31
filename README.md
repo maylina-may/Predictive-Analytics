@@ -126,11 +126,13 @@ Sebaliknya, tidak ditemukan korelasi negatif yang signifikan antar fitur numerik
 ## 💹 Modeling
 
 1. 🤖 **K-Nearest Neighbor Regressor:** Model K-Nearest Neighbors (KNN) untuk regresi memprediksi nilai target untuk sebuah data baru berdasarkan nilai target dari 'K' data terdekat di set pelatihan. Algoritma ini menghitung jarak antara data baru dan semua data pelatihan, kemudian memilih K data dengan jarak terpendek. Prediksi akhir untuk data baru adalah rata-rata dari nilai target K tetangga terdekat tersebut.
+Pada implementasi ini, digunakan parameter n_neighbors=5, yang berarti model akan mempertimbangkan 5 tetangga terdekat untuk menentukan nilai prediksi.
 
 2. 🌲 **Random Forest Regressor:** Random Forest Regressor adalah model ensemble yang membangun banyak Decision Tree secara independen pada subset data pelatihan dan subset fitur yang diambil secara acak. Setiap Decision Tree memprediksi nilai target secara terpisah. Hasil prediksi akhir dari Random Forest adalah rata-rata dari prediksi semua Decision Tree individual. Metode ini membantu mengurangi overfitting dan meningkatkan generalisasi.
+Pada implementasi ini, digunakan parameter n_estimators=100 untuk membangun 100 pohon keputusan, serta random_state=42 untuk memastikan hasil yang konsisten dan dapat direproduksi.
 
 
-3. ⚡ **AdaBoost Regressor :** AdaBoost Regressor (Adaptive Boosting) adalah algoritma ensemble boosting. Algoritma ini membangun model (disebut weak learner, biasanya Decision Tree sederhana) secara berurutan. Setiap model baru dilatih untuk memperbaiki kesalahan prediksi dari model sebelumnya dengan memberikan bobot lebih besar pada data yang sulit diprediksi. Prediksi akhir adalah kombinasi berbobot dari prediksi semua weak learner, di mana model yang lebih akurat memiliki bobot yang lebih tinggi.
+3. ⚡ **AdaBoost Regressor :** AdaBoost Regressor (Adaptive Boosting) adalah algoritma ensemble boosting. Algoritma ini membangun model (disebut weak learner, biasanya Decision Tree sederhana) secara berurutan. Setiap model baru dilatih untuk memperbaiki kesalahan prediksi dari model sebelumnya dengan memberikan bobot lebih besar pada data yang sulit diprediksi. Prediksi akhir adalah kombinasi berbobot dari prediksi semua weak learner, di mana model yang lebih akurat memiliki bobot yang lebih tinggi. Pada implementasi ini, digunakan parameter learning_rate=0.05 untuk mengontrol kontribusi setiap weak learner terhadap prediksi akhir, serta random_state=55 untuk menjaga konsistensi hasil.
 
 ---
 
@@ -145,19 +147,19 @@ MSE adalah salah satu metrik yang umum digunakan untuk evaluasi model regresi. M
 
 ### 🏆 Hasil Evaluasi Berdasarkan MSE
 
-![MSE](https://github.com/user-attachments/assets/6616c337-63c4-4b81-a73a-e882be64393d)
+![evaluasi modell](https://github.com/user-attachments/assets/1e740c18-a8a9-4bf0-acf4-8adc7452811f)
 
-- Random Forest: Model terbaik, MSE terendah pada data uji. Prediksinya paling akurat.
-- Boosting: Performa cukup baik, MSE lebih tinggi dari Random Forest tapi lebih rendah dari KNN.
-- KNN: Performa terburuk, MSE tertinggi pada data uji. Kurang efektif memprediksi.
-Perbandingan Train vs Test MSE menunjukkan seberapa baik model menggeneralisasi. Selisih besar = potensi overfitting.
+- Random Forest: Memiliki MSE training paling rendah (5.2953) tetapi MSE testing paling tinggi (1193.5052). Ini menunjukkan overfitting parah.
+- KNN: Memiliki MSE training (35.639899) yang lebih tinggi dari RF tetapi MSE testing (1165.454472) yang sedikit lebih rendah dari RF. Ini juga menunjukkan overfitting.
+- Boosting: Memiliki MSE training (44.512746) tertinggi tetapi MSE testing (681.897012) paling rendah.
+Jadi, Boosting adalah model yang paling baik dalam memprediksi skor matematika pada data yang belum dilihat (data test), meskipun secara keseluruhan akurasi prediksinya (dalam hal MSE) masih bisa ditingkatkan.
  
 ### 💡 Hasil Evaluasi Berdasarkan Data Aktual
 
-1. **Random Forest:** 36.8177
-2. **K-Nearest Neighbor:** 45.4945
-3. **Boosting:** 51.9597
+1. **Random Forest:** 36.2
+2. **K-Nearest Neighbor:** 36.0
+3. **Boosting:** 50.5
 
-Secara keseluruhan dari ketiga model yang telah diuji, Random Forest adalah algoritma yang dapat dipilih untuk melakukan suatu prediksi karena, memiliki performa tinggi yang dapat memberikan hasil yang paling akurat untuk memprediksi skor matematika siswa 🔥.
+Secara keseluruhan dari ketiga model yang telah diuji, Boosting adalah algoritma yang dapat dipilih untuk melakukan suatu prediksi karena, memiliki performa tinggi yang dapat memberikan hasil yang paling akurat untuk memprediksi skor matematika siswa 🔥.
 
 ---
